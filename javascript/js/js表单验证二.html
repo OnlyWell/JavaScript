@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Email验证</title>
+	</head>
+	<script>
+		/**
+		 * Email验证标准,输入的数据必须包含 @ 符号和点号(.)。同时，@ 不可以是邮件地址
+		 * 的首字符，并且 @ 之后需有至少一个点号
+		 * 
+		 */
+		function validateForm(){
+			var x = document.forms["myform"]["email"].value;
+			var atpos = x.indexOf("@");//@的位置
+			var dotpos = x.lastIndexOf(".");//.的位置
+			if(atpos < 1 || dotpos < atpos+2 || dotpos+2 >= x.length){
+				alert("Not a valid e-mail address");
+				return false;
+			}
+		}
+	</script>
+	<body>
+		<form name="myform" action="http://www.baidu.com" method="post"
+			onsubmit="return validateForm()">
+		Email: <input type="text" name="email" /><br />
+		<input type="submit" value="提交"/>
+		</form>
+	</body>
+</html>

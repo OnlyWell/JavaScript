@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>JavaScript的void(0)</title>
+	</head>
+	<script>
+		/*
+		 * javascript:void(0) 中最关键的是 void 关键字， 
+		 * void 是 JavaScript 中非常重要的关键字，
+		 * 该操作符指定要计算一个表达式但是不返回值.
+		 */
+		function getValue() {
+			var a, b, c;
+			a = void(b = 5, c = 7);
+			document.write('a = ' + a + ' /n/n b = ' + b + ' c = ' + c);
+		}
+		/*
+		 * href="#"与href="javascript:void(0)"的区别
+		 * # 包含了一个位置信息，默认的锚是#top 也就是网页的上端。
+		 * 而javascript:void(0), 仅仅表示一个死链接。
+		 *在页面很长的时候会使用 # 来定位页面的具体位置，格式为：# + id。
+		 *如果你要定义一个死链接请使用 javascript:void(0) 。
+		 */
+	</script>
+
+	<body>
+		<p id="index">来</p>
+		<br />
+		<a href="javascript:void(0)">单击次数什么也不会发生</a>
+		<br />
+		<a href="javascript:void(alert('Warning!!!))'))">点我</a>
+		<br />
+		<a href="javascript:void(alert('缓存清除成功!'))">清除缓存</a>
+
+		<div>
+			<input type="button" value="显示" onclick="return getValue()" />
+		</div>
+		<a href="javascript:void(0);">点我没有反应的!</a>
+		<a href="#pos">点我定位到指定位置!</a>
+		<br><br><br>
+		<br><br><br>
+		<br><br><br>
+		<br><br><br>
+		<br><br><br>
+		
+		<br><br><br>
+		<br><br><br>
+		<br><br><br>
+		
+		<br><br><br>
+		<br><br><br>
+		
+		<br><br><br>
+		<br><br><br>
+		
+		<br><br><br>
+		<br><br><br>
+		<br><br><br>
+		
+		<br><br><br>
+		<br><br><br>
+		
+		<p id="pos">尾部定位点</p>
+		<a href="#index">回到首部</a>
+	</body>
+
+</html>
