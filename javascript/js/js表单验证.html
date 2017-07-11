@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js表单验证</title>
+	</head>
+	<script>
+		function validateForm(){
+			/**
+			 * 经过测验发现一个forms下面只对一个name生效
+			 * document.forms["myform"]["fname"].value;
+			 * document.forms["myform"]["fname"]["mytext"].value;//无效,后面两个同时失效
+			 */
+			var x = document.forms["myform"]["fname"]["mytext"].value;
+			alert(x+"哈"); 
+			if(x == null || x == ""){
+				alert("姓名不能为空!");
+				return false;
+			}
+		}
+	</script>
+	<body>
+		<form name ="myform" action="http:www.baidu.com" onsubmit="validateForm()" method="post">
+			姓名:<input type="text" name="fname"/>
+			<input type="submit" value="提交" />
+			<br />
+			输入框:<input type="text" name="mytext"/>
+			<input type="submit" value="登录" />
+		</form>
+	</body>
+</html>
