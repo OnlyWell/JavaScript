@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>javascript函数参数</title>
+	</head>
+	<script>
+		/*
+		 * 函数显式参数与隐藏参数(arguments)
+		 * 
+		 * 参数规则:
+		 * JavaScript 函数定义时参数没有指定数据类型;
+		 * JavaScript 函数对隐藏参数(arguments)没有进行检测;
+		 * JavaScript 函数对隐藏参数(arguments)的个数没有进行检测
+		 * 
+		 * 如果函数在调用时缺少参数，参数会默认设置为： undefined
+		 */
+		function test1(x,y){
+			if(y === undefined){
+				y = 0;
+			}
+		}
+		//用更简单的方式
+		function test2(x,y){
+			y = y || 0;
+		}
+		/*
+		 * 如果函数调用时设置了过多的参数,参数将无法被引用,因为无法找到对应的参数名。
+		 * 只能使用argument对象来调用
+		 */
+		x = findMax(1,123,500,115,44,88);
+		function findMax(){
+			var i, max = arguments[0];
+			if(arguments.length < 2){
+				return max;
+			}
+			
+			for(i = 1; i < arguments.length; i++){
+				if(arguments[i] > max){
+					max = arguments[i];
+				}
+			}
+			return max;
+		}
+//		alert("max = " + x);
+		
+		//
+		k = sum(2,3,4,5,6,7,8);
+		function sum(){
+			var sum = 0;
+			if(arguments.length == 0){
+				return 0;
+			}else{
+				for(var i = 1; i < arguments.length; i++){
+					sum += arguments[i];
+				}
+				return sum;
+			}
+		}
+//		alert("sum = " + k);
+		
+		/**
+		 * 通过值传递
+		 */
+		var a = 1;
+		//通过值传递参数
+		function value1(a){
+			a ++; //修改参数x的值,将不会修改函数外定义的变量x
+			console.log(a);
+		}
+		value1(a);//2
+		console.log(a);//1
+		
+		/*
+		 * 通过对象传递参数
+		 * 在js中,可以引用对象的值
+		 * 因此我们在函数内部修改对象的属性就会修改其初始的值
+		 * 修改对象属性可作用于函数外部(全局变量)
+		 */
+		
+		var obj = {x : 1};
+		//通过对象传递参数
+		function test3(obj){
+			obj.x ++;//修改参数对象的obj.x的值,函数外定义的obj也将会被修改
+			console.log(obj.x);
+		}
+		test3(obj);//2
+		console.log(obj.x);//2
+	</script>
+	<body>
+	</body>
+</html>

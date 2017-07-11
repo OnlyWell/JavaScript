@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JavaScript函数定义(1)</title>
+	</head>
+	<script>
+		//函数声明
+		/*function myFunction(a,b){
+			return a * b;
+		}*/
+		//函数表达式
+		/*
+		 * js函数可以通过一个表达式定义,函数表达式可以存储在变量中
+		 */
+		var x = function (a, b){return a * b};
+		//在函数表达式存储在变量后,变量也可作为一个函数使用
+		var z = x(4,3);
+//		alert(z);
+
+		/*
+		 * Function()构造函数
+		 * 函数通过function定义,也可以通过内置的js函数构造器(Function())定义
+		 */
+		var myFunction  = new Function("a", "b", "return a * b");
+		var y = myFunction(4,4);
+//		alert(y);
+		/*
+		 * 函数提升(Hoisting)
+		 * 提升(Hoisting)是JavaScript默认将当前作用域提升到前面去的行为.
+		 * 提升(Hoisting)应用在变量的声明与函数的声明.
+		 * 
+		 * 使用表达式定义函数时无法提升
+		 */
+		m = function1(6);
+		function function1(y){return 6*6*6};
+//		alert(m);
+		
+		/**
+		 * 自调用函数
+		 * 函数表达式可以"自调用"
+		 * 自调用表达式会自动调用。
+		 * 如果表达式后面紧跟(),则会自动调用.
+		 * Y不能自调用声明的函数
+		 * 通过添加括号,来说明它是一个函数表达式;
+		 */
+		(function (){
+			var x = "Hello!!";//我将调用自己
+//			alert(x);
+		})();
+		
+		/*
+		 * 函数可以作为一个值使用
+		 */
+		m1 = function1(6);
+		 /*
+		 * 函数可以作为表达式使用
+		 */
+//		alert(function1(8) * 5);
+
+		/*
+		 * 函数时对象
+		 * 在js中使用typeof操作符判断函数类型敬爱哪个返回"function".
+		 * js函数描述为一个对象更加准确,js函数有 属性 和 方法。
+		 * arguments.length 属性返回函数调用过程接收到的参数个数
+		 */
+		function function2(a,b,c){
+			return arguments.length;
+		}
+//		alert(function2(1,23,4));
+		//toString()方法将函数作为一个字符串返回
+		alert(function2(1,2,3,4).toString()+ 5);
+		/*
+		 * 函数定义作为对象的属性,称之为对象方法.
+		 * 函数如果用于创建新的对象,诚挚为对象的构造函数.
+		 */
+		
+	</script>
+	<body>
+	</body>
+</html>
