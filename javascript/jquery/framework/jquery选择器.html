@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery选择器</title>
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+			/**
+			 * $("p")		--在页面选取所有p元素
+			 * 
+			 */
+		/*	$(function(){
+				$("button").click(function(){
+					$("p").hide();
+				});
+			});*/
+			/**
+			 * #id选择器
+			 * jQuery #id选择器通过HTML元素的id属性选取制定的元素.
+			 * 页面元素的id应该是唯一的
+			 * 
+			 * $("#test")
+			 */
+			$(document).ready(function(){
+				$("button").click(function(){
+					$("#test").hide();
+				}
+			);
+			});
+		</script>
+	</head>
+	<body>
+		<h2>这是一个标题</h2>
+		<p>这是一个段落</p>
+		<p>这是另一个段落</p>
+		<button>点我</button>
+		
+		<p id="test">这是id选择器</p>
+	</body>
+</html>

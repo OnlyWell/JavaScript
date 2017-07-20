@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jquery1</title>
+	</head>
+	
+	<script type="text/javascript" src="framework/jquery-3.2.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("p").click(function(){
+				$(this).hide();
+			});
+		});
+		/**
+		 * jQuery语法:
+		 * 基础语法:
+		 * 		$(selector).action()
+		 * 实例：
+		 * 	$(this).hide()	--隐藏当前元素
+		 *  $("p").hide()	--隐藏所有段落
+		 *  $("p .test").hide() --隐藏所有 class="test"的段落
+		 *  $("#test").hide()  --隐藏所有id="test"的元素
+		 */
+		
+		/**
+		 * 文档就绪事件
+		 * $(document).ready(function(){
+		 * 	...
+		 * });
+		 * 
+		 * 这样是为了防止文档在完全加载(就绪之前)运行jQuery代码
+		 * 如果在文档没有完全加载之前就运行函数,操作可能失败.
+		 * 
+		 * 简洁语法,效果等同上面
+		 * $(fuction(){
+		 * 	...;
+		 * })
+		 */
+	</script>
+	<body>
+		<p>你点我,我就会消失。</p>
+		<p>点我!</p>
+		<p>点我!</p>
+	</body>
+</html>
