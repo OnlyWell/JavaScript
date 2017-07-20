@@ -21,12 +21,40 @@
 			 * 
 			 * $("#test")
 			 */
+//			$(document).ready(function(){
+//				$("button").click(function(){
+//					$("#test").hide();
+//				}
+//			);
+//			});
+			/**
+			 * .class选择器
+			 * jQuery类选择器可以通过制定的class查找元素
+			 */
 			$(document).ready(function(){
 				$("button").click(function(){
-					$("#test").hide();
-				}
-			);
+					$(".test").hide();
+				});
 			});
+			/**
+			 * 更多实例
+			 * $("*")	--选取所有元素
+			 * $(this)	--选取当前HTML元素
+			 * $("p.intro")	选取class为intro的<p>元素
+			 * $("p:first")	--选取第一个<p>元素
+			 * $("ul li:first")	--选取第一个<ul>元素的第一个<li>元素
+			 * $("ul li: first-child")	--选取每个<ul>元素的第一个<li>元素
+			 * $("[href]")		--选取带有href属性的元素
+			 * $("a[target="_blank]") 选取所有target属性值等于"_blank" 的 <a> 元素
+			 * $("a[target!="_blank"]) 选取所有target属性值不等于"_blank"的<a>元素
+			 * $(":button")	--选取所有type="button"的<input>元素和<button>元素
+			 * $("tr:even")	--选取偶数位置的<tr>元素
+			 * $("tr:odd")	--选取奇数位置的<tr>元素
+			 * 
+			 * 
+			 * 
+			 * 
+			 */
 		</script>
 	</head>
 	<body>
@@ -36,5 +64,8 @@
 		<button>点我</button>
 		
 		<p id="test">这是id选择器</p>
+		
+		<h2 class="test">这又是一个标题</h2>
+		<p class="test">还有一个段落</p>
 	</body>
 </html>
