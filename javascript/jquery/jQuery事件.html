@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery事件</title>
+	</head>
+	<script type="text/javascript" src="framework/jquery-3.2.1.js"></script>
+	<script>
+		/**
+		 * jQuery事件方法语法
+		 * $("p").click();
+		 * 
+		 * $(document).ready()方法允许我们在文档完全加载完成后执行函数.
+		 * 
+		 */
+//		$(document).ready(function(){
+//			$("p").click(function(){
+//				$(this).hide();
+//			});
+//		});
+			/**
+			 * dblclick()
+			 * 当双击元素时,会发生dblclick事件
+			 * 
+			 */
+			$(function(){
+				$("p").dblclick(function(){
+				$(this).hide();
+			});
+			});
+			/**
+			 * mouseenter()
+			 * 当鼠标指针穿过元素时,会发生mouseenter事件
+			 */
+//			$(document).ready(function(){
+//				$("#p1").mouseenter(function(){
+//					alert("您的鼠标移到了 id=1 的元素上！")
+//				});
+//			});
+			
+//			$(document).ready(function(){
+//				$("#p2").mouseleave(function(){
+//					alert("鼠标离开了这儿！")
+//				});
+//			});
+			
+			//mousedown()
+//			$(document).ready(function(){
+//				$("#p3").mousedown(function(){
+//					alert("鼠标按下了！")
+//				});
+//			});
+
+			/*$(document).ready(function(){
+				$("#p4").mousedown(function(){
+					alert("松开鼠标按钮！")
+				});
+			});
+			
+			$(document).ready(function(){
+				$("#p5").hover(function(){
+					alert("鼠标悬停！")
+				});
+			});*/
+			
+			
+			//focus(),当元素获得焦点时,发生focus事件
+			//blur(),当元素失去焦点时,发生blur事件.
+			$(function(){
+				$("input").focus(function(){
+					$(this).css("background-color", "#aaaaaa");
+				});
+				
+				$("input").blur(function(){
+					$("input").css("background-color", "#ffffff");
+				})
+			});
+	</script>
+
+	<body>
+		<p id="p1">鼠标指针进入此处,hi看到弹窗.</p>
+		<p>如果你点我，我就会消失。</p>
+		<p>点我消失!</p>
+		<p>点我也消失!</p>
+		
+		<p id="p2">鼠标离开了这儿</p>
+		
+		<p id="p3">按下鼠标</p>
+		<p id="p4">松开鼠标按钮</p>
+		<p id="p5">鼠标悬停</p>
+		
+		<p>
+			Name:<input type="text" name="fullname"><br />
+			Email:<input type="text" name="email" />
+			
+		</p>
+	</body>
+
+</html>
